@@ -1,0 +1,45 @@
+
+{% extends "AppCoder/parent.html" %}
+{% load static %}
+
+{% block title %}
+
+    <title>ABM Docentes</title>
+
+{% endblock %}
+
+
+{% block titlecontent %}
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Proyecto 23850</div>
+            <div class="masthead-heading text-uppercase">ABM Docentes</div>
+        </div>
+    </header>
+
+{% endblock %}
+
+
+{% block maincontent %}
+
+<!-- Acá viene el contenido || esto es form por DJANGO-->
+<form action="/AppCoder/abmDocentes" method="POST"> {% csrf_token %}
+        
+    {% if docentesFormulario.errors %}
+
+    <p>ERROR</p>
+
+    {% endif %}
+
+    <table>
+    
+        {{ docentesFormulario.as_table }}
+    
+    </table>
+
+    <input type="submit"  value = "Enviar">
+
+</form>        
+
+{% endblock %}

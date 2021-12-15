@@ -1,0 +1,36 @@
+
+{% extends "AppCoder/parent.html" %}
+{% load static %}
+
+{% block title %}
+
+    <title>Alumnos</title>
+
+{% endblock %}
+
+
+{% block titlecontent %}
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Proyecto 23850</div>
+            <div class="masthead-heading text-uppercase">Alumnos</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="{% url 'ABM-Alumnos' %}">ABM</a>
+        </div>
+    </header>
+
+{% endblock %}
+
+
+{% block maincontent %}
+
+    <br>
+    <center>
+        {% for x in alumnos %}
+
+        <p>{{x}}</p>
+    
+        {% endfor %}
+    </center>
+    <br>
+{% endblock %}

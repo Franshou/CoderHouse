@@ -1,0 +1,47 @@
+
+{% extends "AppCoder/parent.html" %}
+{% load static %}
+
+{% block title %}
+
+    <title>Alumnos</title>
+
+{% endblock %}
+
+
+{% block titlecontent %}
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Proyecto 23850</div>
+            <div class="masthead-heading text-uppercase">Listado de alumnos</div>
+        </div>
+
+        <ul>
+
+            {% for alumno in object_list %}
+        
+                    <p>{{alumno.nombre}} {{alumno.apellido}}</p>
+                    <p>
+                        <a href="{% url 'AluDetail' alumno.id %}">Ver</a>
+                        <a href="{% url 'AluEdit' alumno.id %}">Editar</a>
+                        <a href="{% url 'AluDelete' alumno.id %}">Eliminar</a>
+                    <br>
+                    <br>
+                    </p>
+
+            {% endfor %}
+        
+        </ul>
+
+
+    </header>
+
+{% endblock %}
+
+
+{% block maincontent %}
+
+    
+
+{% endblock %}

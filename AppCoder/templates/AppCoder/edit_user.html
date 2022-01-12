@@ -1,0 +1,51 @@
+
+{% extends "AppCoder/parent.html" %}
+{% load static %}
+
+{% block title %}
+
+    <title>Edición de usuario</title>
+
+{% endblock %}
+
+
+{% block titlecontent %}
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Proyecto 23850</div>
+            <div class="masthead-heading text-uppercase">AppCoder</div>
+        </div>
+
+        <form action="" method="POST">
+            
+            {% csrf_token %}
+
+            <center>
+            <table>
+
+                {{ editUserForm.as_table }}
+                
+            </table>
+            </center>
+
+            <br>
+            
+            <a href="{% url 'AvatarAdd' %}">
+            <button type="button">Editar avatar</button>
+            </a>
+
+            <button type="submit">Guardar cambios</button>
+
+        </form>    
+
+    </header>
+
+{% endblock %}
+
+
+{% block maincontent %}
+
+    <!-- Acá viene el contenido -->
+
+{% endblock %}

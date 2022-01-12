@@ -14,32 +14,32 @@
     <header class="masthead">
         <div class="container">
             <div class="masthead-subheading">Proyecto 23850</div>
-            <div class="masthead-heading text-uppercase">ABM Docentes</div>
+            <div class="masthead-heading text-uppercase">Ingreso de nuevo docente</div>
         </div>
+
+        <form action="/AppCoder/abmDocentes" method="POST"> {% csrf_token %}
+            
+            {% if docentesFormulario.errors %}
+                <p>ERROR</p>
+            {% endif %}
+    
+                <table align="center">
+                    {{ docentesFormulario.as_table }}
+                </table>
+        
+                <br>
+                <input type="submit"  value = "Enviar">
+            
+        </form>   
+
+
     </header>
+
 
 {% endblock %}
 
 
 {% block maincontent %}
 
-<!-- Acá viene el contenido || esto es form por DJANGO-->
-<form action="/AppCoder/abmDocentes" method="POST"> {% csrf_token %}
-        
-    {% if docentesFormulario.errors %}
-
-    <p>ERROR</p>
-
-    {% endif %}
-
-    <table>
-    
-        {{ docentesFormulario.as_table }}
-    
-    </table>
-
-    <input type="submit"  value = "Enviar">
-
-</form>        
 
 {% endblock %}

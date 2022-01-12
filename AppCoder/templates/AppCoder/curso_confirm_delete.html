@@ -1,0 +1,46 @@
+
+{% extends "AppCoder/parent.html" %}
+{% load static %}
+
+{% block title %}
+
+    <title>Cursos</title>
+
+{% endblock %}
+
+
+{% block titlecontent %}
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Proyecto 23850</div>
+            <div class="masthead-heading text-uppercase">Eliminar curso</div>
+        </div>
+
+        <ul>
+
+            <form method="post">
+                {% csrf_token %}
+                <p>Está seguro que desea eliminar de la base de datos el curso {{curso.materia}} (comisión {{curso.comision}})?</p>
+                <p>Este acción no puede deshacerse...</p>
+
+                <input type="submit" value="Sí, deseo eliminarlo">
+                <br><br>
+                <a href="{% url 'CurList' %}">Mejor no...</a>
+
+
+            </form>
+        
+        </ul>
+
+
+    </header>
+
+{% endblock %}
+
+
+{% block maincontent %}
+
+    
+
+{% endblock %}

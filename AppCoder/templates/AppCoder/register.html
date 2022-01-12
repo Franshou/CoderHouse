@@ -4,7 +4,7 @@
 
 {% block title %}
 
-    <title>Main page</title>
+    <title>Registro</title>
 
 {% endblock %}
 
@@ -14,10 +14,18 @@
     <header class="masthead">
         <div class="container">
             <div class="masthead-subheading">Proyecto 23850</div>
-            <div class="masthead-heading text-uppercase">AppCoder</div>
-
-            <h3>{{mensaje}}</h3>
+            <div class="masthead-heading text-uppercase">Registro</div>
         </div>
+
+        <form action="" method="POST">
+            
+            {% csrf_token %}
+            {{regForm.as_p}}
+            
+            <button type="submit">Crear usuario</button>
+    
+        </form>    
+
     </header>
 
 {% endblock %}
@@ -26,5 +34,5 @@
 {% block maincontent %}
 
     <!-- Acá viene el contenido -->
-    
+
 {% endblock %}

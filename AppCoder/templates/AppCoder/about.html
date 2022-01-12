@@ -1,0 +1,73 @@
+
+{% extends "AppCoder/parent.html" %}
+{% load static %}
+
+{% block title %}
+
+    <title>About</title>
+
+{% endblock %}
+
+
+{% block titlecontent %}
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Proyecto 23850</div>
+            <div class="masthead-heading text-uppercase">About</div>
+
+            <h7>
+                Mi nombre es Francisco, tengo 34 años, soy Licenciado en Comercio Internacional, operativo de importaciones
+                marítimas en Hellmann Worldwide Logistics y docente de la cátedra de Práctica Profesional Supervisada en la
+                universidad CAECE.
+                <br>
+                Dado mi secundario técnico, aprendí los conceptos básicos de programación de C, C++, assembler y PLC,
+                aunque no los volví a aplicar al haber emprendido otro rumbo académico.
+                <br>
+                <br>
+                El presente proyecto consta de una página web realizada en Python utilizando Django como framework.
+                <br>
+                La misma cuenta con una <a href="{% url 'Inicio' %}">página principal</a> de libre acceso que muestra la
+                estructura básica de la web.
+                <br>
+                <br>
+                Toda la web cuenta con una barra de navegación semidinámica con herencia, que permite el retorno a la web
+                de inicio, así como también el <a href="{% url 'Register' %}">registro de nuevos usuarios</a> (en caso de
+                ya estar logueado este elementos es reemplazado por la <a href="{% url 'EditUser' %}">edición del usuario</a>),
+                y el acceso a las distintas clases de datos que se decidieron crear.
+                <br>
+                Adicionalmente, en la esquina superior izquierda está el botón de <a href="{% url 'Login' %}">login</a>
+                (o de <a href="{% url 'Logout' %}">logout</a> en caso de ya estar logueado) y el avatar correspondiente
+                al usuario. Cabe remarcar que en caso de no estar logueado, o tener un usuario sin avatar, el espacio en
+                cuestión muestra un avatar genérico.
+                <br>
+                Es importante remarcar que tanto para visualizar los datos, como para editarlos o eliminarlos, es
+                necesario estar logueado.
+                <br>
+                <br>
+                En las tres secciones de datos de la web (<a href="{% url 'Alumnos' %}">alumnos</a>,
+                <a href="{% url 'Docentes' %}">docentes</a> o <a href="{% url 'Cursos' %}">cursos</a>) la estructura es
+                idéntica. En cualquiera de los casos se accede a un hub con 2 botones que cumplen la función de CRUD:
+                <br><br>
+                <li>Listado:</li>
+                Permite visualizar un listado de todos los elementos creados dentro de la clase correspondiente, 
+                ofreciendo las opciones de ver la información detallada, así como también editarla y eliminarla.
+                <br><br>
+                <li>Formulario:</li>
+                Permite ingresar un nuevo elemento a la clase en cuestión.
+                <br><br><br>
+                Se entrega junto al link de GitHub, un video mostrando el funcionamiento de la web, y casos de prueba 
+                en formato Excel ubicados en la carpeta UNIT TEST.
+
+            </h7>
+        </div>
+    </header>
+
+{% endblock %}
+
+
+{% block maincontent %}
+
+    <!-- Acá viene el contenido -->
+    
+{% endblock %}

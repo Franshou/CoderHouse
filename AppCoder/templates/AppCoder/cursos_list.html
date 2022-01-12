@@ -1,0 +1,47 @@
+
+{% extends "AppCoder/parent.html" %}
+{% load static %}
+
+{% block title %}
+
+    <title>Cursos</title>
+
+{% endblock %}
+
+
+{% block titlecontent %}
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Proyecto 23850</div>
+            <div class="masthead-heading text-uppercase">Listado de cursos</div>
+        </div>
+
+        <ul>
+
+            {% for curso in object_list %}
+        
+                    <p>{{curso.comision}} - {{curso.materia}}</p>
+                    <p>
+                        <a href="{% url 'CurDetail' curso.id %}">Ver</a>
+                        <a href="{% url 'CurEdit' curso.id %}">Editar</a>
+                        <a href="{% url 'CurDelete' curso.id %}">Eliminar</a>
+                    <br>
+                    <br>
+                    </p>
+
+            {% endfor %}
+        
+        </ul>
+
+
+    </header>
+
+{% endblock %}
+
+
+{% block maincontent %}
+
+    
+
+{% endblock %}

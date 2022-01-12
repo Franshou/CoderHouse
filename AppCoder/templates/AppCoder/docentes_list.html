@@ -1,0 +1,47 @@
+
+{% extends "AppCoder/parent.html" %}
+{% load static %}
+
+{% block title %}
+
+    <title>Docentes</title>
+
+{% endblock %}
+
+
+{% block titlecontent %}
+
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Proyecto 23850</div>
+            <div class="masthead-heading text-uppercase">Listado de docentes</div>
+        </div>
+
+        <ul>
+
+            {% for docente in object_list %}
+        
+                    <p>{{docente.nombre}} {{docente.apellido}} - {{docente.catedra}}</p>
+                    <p>
+                        <a href="{% url 'DocDetail' docente.id %}">Ver</a>
+                        <a href="{% url 'DocEdit' docente.id %}">Editar</a>
+                        <a href="{% url 'DocDelete' docente.id %}">Eliminar</a>
+                    <br>
+                    <br>
+                    </p>
+
+            {% endfor %}
+        
+        </ul>
+
+
+    </header>
+
+{% endblock %}
+
+
+{% block maincontent %}
+
+    
+
+{% endblock %}

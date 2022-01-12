@@ -27,16 +27,32 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'Inicio' %}"><img src="{% static 'AppCoder/assets/img/navbar-logo.svg' %}" alt="..." /></a>
+                
+                {% if user.is_authenticated %}
+                    <img height = "40px" src="{{url}}" alt="">    
+                    <a class="navbar-brand" href="{% url 'Logout' %}"><img src="{% static 'AppCoder/assets/img/navbar-logo - logout.png' %}" alt="Login" /></a>        
+                {% else %}
+                    <img height = "40px" src="{% static 'AppCoder/assets/img/blank.png' %}" alt="">
+                    <a class="navbar-brand" href="{% url 'Login' %}"><img src="{% static 'AppCoder/assets/img/navbar-logo - login.png' %}" alt="Logout" /></a>
+                {% endif %}
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Alumnos' %}">Alumnos</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Docentes' %}">Docentes</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Cursos' %}">Cursos</a></li>
+
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'EditUser' %}">{{request.user.username}}</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Register' %}">Registro</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -65,8 +81,7 @@
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                        <a class="link-dark text-decoration-none" href="{% url 'About' %}">Acerca de mí</a>
                     </div>
                 </div>
             </div>

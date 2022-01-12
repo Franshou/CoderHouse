@@ -1,2 +1,0 @@
-# CoderHouse
-Entrega intermedia - Kleinlein
